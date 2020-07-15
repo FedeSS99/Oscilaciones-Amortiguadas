@@ -9,8 +9,8 @@ El evento a simular es el movimiento amortiguado de una esfera bajo la influenci
 El usuario define en una ventana de tkinter las magnitudes principales del sistema tales como la constante de amortiguamiento del fluido, la constante elástica del resorte y la masa de la esfera; cada uno en unidades de kg/s, N/m y kg. También ingresa los valores de las condiciones iniciales tales como la posición y velocidad de la esfera sumergida en un tiempo t=0s.
 
 Tras esto, se puede seleccionar una de las dos opciones a querer visualizar:
--Visualizar una gráfica estática que muestre las curvas de amplitud y velocidad contra el tiempo sin ninguna animación (mejor opción para obtener imagenes)
--Visualizar una gráfica animada que muestre la evolución de las curvas de amplitud y velocidad contra el tiempo además de una animación de una "bolita" que se traslada a traves de un eje vertical acorde a las variables ingresadas.
+- Visualizar una gráfica estática que muestre las curvas de amplitud y velocidad contra el tiempo sin ninguna animación (mejor opción para obtener imagenes)
+- Visualizar una gráfica animada que muestre la evolución de las curvas de amplitud y velocidad contra el tiempo además de una animación de una "bolita" que se traslada a traves de un eje vertical acorde a las variables ingresadas.
 
 Se eligió intervalos de tiempo de 15 milisegundos para la gráfica animada posea mejor fluidez sin sacrificar tiempo de ejecución hasta la última posición calculada.
 El modelo utilizado es bajo la siguiente ecuación diferencial:
