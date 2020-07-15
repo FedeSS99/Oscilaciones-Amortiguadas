@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-import numpy as np
+from numpy import exp, sqrt, cos, sin
 from matplotlib.animation import FuncAnimation
 from tkinter import *
 
@@ -25,19 +25,19 @@ plt.style.use('dark_background')
 # del resorte.
 def generar_datos(D, y0, v0, b, M, k):
     def sobreamortiguado(t1, h, v1, b1, d1):
-        m1, m2 = (-b1 + np.sqrt(d1)) / (2 * M), (-b1 - np.sqrt(d1)) / (2 * M)
+        m1, m2 = (-b1 + sqrt(d1)) / (2 * M), (-b1 - sqrt(d1)) / (2 * M)
         c = ((v1 - h * m1) / (m1 - m2))
-        return (h - c) * np.exp(m1 * t1) + c * np.exp(m2 * t1)
+        return (h - c) * exp(m1 * t1) + c * exp(m2 * t1)
 
     def amortiguado_critico(t2, h, b2, m2, v2):
         c1 = -b2 / (2 * m2)
-        return h * np.exp(c1 * t2) + (h * (-c1) + v2) * t2 * np.exp(c1 * t2)
+        return h * exp(c1 * t2) + (h * (-c1) + v2) * t2 * exp(c1 * t2)
 
     def oscilacion_sub(t3, b3, m3, k0, h, v3):
-        w = np.sqrt((k0 / m3) - pow((b3 / (2 * m3)), 2))
+        w = sqrt((k0 / m3) - pow((b3 / (2 * m3)), 2))
         c2 = -b3 / (2 * m3)
         c3 = (b3 * h + 2 * m3 * v3) / (2 * m3 * w)
-        return np.exp(c2 * t3) * (h * np.cos(w * t3) + c3 * np.sin(w * t3))
+        return exp(c2 * t3) * (h * cos(w * t3) + c3 * sin(w * t3))
 
     # Se declaran las listas y variables para generar en un ciclo while los datos de amplitud y tiempo.
     amplitudes, tiempos = [], []
@@ -66,11 +66,11 @@ def generar_datos(D, y0, v0, b, M, k):
         elif D < 0:
             tipo = 'Subamortiguado'
             k3 = -b / (2 * M)
-            y1, y2 = y0 * np.exp(k3 * t), -y0 * np.exp(k3 * t)
+            y1, y2 = y0 * exp(k3 * t), -y0 * exp(k3 * t)
             dif_y = y1 - y2
             while dif_y > a * y0:
                 t += dt
-                dif_y = 2 * y0 * np.exp(k3 * t)
+                dif_y = 2 * y0 * exp(k3 * t)
                 y = oscilacion_sub(t, b, M, k, y0, v0)
                 amplitudes.append(y)
                 tiempos.append(t)
@@ -93,11 +93,11 @@ def generar_datos(D, y0, v0, b, M, k):
         elif D < 0:
             tipo = 'Subamortiguado'
             k3 = -b / (2 * M)
-            y1, y2 = -y0 * np.exp(k3 * t), y0 * np.exp(k3 * t)
+            y1, y2 = -y0 * exp(k3 * t), y0 * exp(k3 * t)
             dif_y = y1 - y2
             while dif_y > abs(a * y0):
                 t += dt
-                y1, y2 = -y0 * np.exp(k3 * t), y0 * np.exp(k3 * t)
+                y1, y2 = -y0 * exp(k3 * t), y0 * exp(k3 * t)
                 dif_y = y1 - y2
                 y = oscilacion_sub(t, b, M, k, y0, v0)
                 amplitudes.append(y)
