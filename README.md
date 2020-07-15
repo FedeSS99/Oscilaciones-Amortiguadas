@@ -18,6 +18,6 @@ El modelo utilizado es bajo la siguiente ecuación diferencial:
 <a href="https://www.codecogs.com/eqnedit.php?latex=m\frac{d^2y}{dt^2}&plus;v\frac{dy}{dt}&plus;ky=0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?m\frac{d^2y}{dt^2}&plus;v\frac{dy}{dt}&plus;ky=0" title="m\frac{d^2y}{dt^2}+v\frac{dy}{dt}+ky=0" /></a>
 
 En la que tenemos tres condiciones que el programa determina de la siguiente manera:
-- <a href="https://www.codecogs.com/eqnedit.php?latex=b^2-4km>0&space;\implies" target="_blank"><img src="https://latex.codecogs.com/gif.latex?b^2-4km>0&space;\implies" title="b^2-4km>0 \implies" /></a>
-- <a href="https://www.codecogs.com/eqnedit.php?latex=b^2-4km=0&space;\implies" target="_blank"><img src="https://latex.codecogs.com/gif.latex?b^2-4km=0&space;\implies" title="b^2-4km=0 \implies" /></a>
-- <a href="https://www.codecogs.com/eqnedit.php?latex=b^2-4km<0&space;\implies" target="_blank"><img src="https://latex.codecogs.com/gif.latex?b^2-4km<0&space;\implies" title="b^2-4km<0 \implies" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=b^2-4km>0&space;\implies" target="_blank"><img src="https://latex.codecogs.com/gif.latex?b^2-4km>0&space;\implies" title="b^2-4km>0 \implies" /></a> El sistema está sobreamortiguado.
+- <a href="https://www.codecogs.com/eqnedit.php?latex=b^2-4km=0&space;\implies" target="_blank"><img src="https://latex.codecogs.com/gif.latex?b^2-4km=0&space;\implies" title="b^2-4km=0 \implies" /></a> El sistema esta amortiguado criticamente
+- <a href="https://www.codecogs.com/eqnedit.php?latex=b^2-4km<0&space;\implies" target="_blank"><img src="https://latex.codecogs.com/gif.latex?b^2-4km<0&space;\implies" title="b^2-4km<0 \implies" /></a> El sistema está subamortiguado
